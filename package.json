@@ -1,6 +1,6 @@
 {
   "name": "streaming-prices",
-  "version": "1.0.0",
+  "version": "1.0.0",  
   "description": "Push JSON prices in real-time over websockets",
   "main": "server.js",
   "dependencies": {
@@ -9,10 +9,9 @@
     "socket.io": "^4.0.1"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.15"
   },
-  "scripts": {
+  "scripts": {    
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   }

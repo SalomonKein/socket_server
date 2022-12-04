@@ -9,6 +9,7 @@
     "socket.io": "^4.0.1"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.15"
   },
   "scripts": {

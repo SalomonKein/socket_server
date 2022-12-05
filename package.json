@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Push JSON prices in real-time over websockets",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -13,6 +16,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   }
 }

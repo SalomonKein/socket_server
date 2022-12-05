@@ -4,7 +4,6 @@ const http = require('http');
 const io = require('socket.io');
 const cors = require('cors');
 const {on} = require('events');
-const serverless = require("serverless-http");
 
 let FETCH_INTERVAL = 5000;
 const PORT = process.env.PORT || 4000;
@@ -69,7 +68,6 @@ function trackTickers(socket) {
 }
 
 const app = express();
-const router = express.Router();
 app.use(cors());
 app.use(express.json());
 const server = http.createServer(app);
@@ -80,12 +78,11 @@ const socketServer = io(server, {
   },
 });
 
-router.get('/', function (req, res) {
-  // res.sendFile(__dirname + '/index.html');
-  res.status(200).json('WORKING!!!')
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
 });
 
-router.post('/', function (req, res) {
+app.post('/', function (req, res) {
   changeInterval(req.body.choice);
   res.status(200).json(`Interval ${req.body.choice} is success`);
 });
@@ -100,9 +97,3 @@ socketServer.on('connection', (socket) => {
 server.listen(PORT, () => {
   console.log(`Streaming service is running on http://localhost:${PORT}`);
 });
-
-
-app.use(`/.netlify/functions/api`, router);
-
-module.exports = app;
-module.exports.handler = serverless(app);

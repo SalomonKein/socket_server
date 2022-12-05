@@ -97,3 +97,8 @@ socketServer.on('connection', (socket) => {
 server.listen(PORT, () => {
   console.log(`Streaming service is running on http://localhost:${PORT}`);
 });
+
+
+app.use(`/.netlify/functions/api`, router);
+
+module.exports = app;

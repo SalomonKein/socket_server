@@ -7,7 +7,7 @@ const {on} = require('events');
 const serverless = require("serverless-http");
 
 let FETCH_INTERVAL = 5000;
-const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT || 4000;
 
 const tickers = [
   {index: 'AAPL', name: 'Apple'},
@@ -96,9 +96,9 @@ socketServer.on('connection', (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Streaming service is running on http://localhost:${PORT}`);
-});
+// server.listen(PORT, () => {
+//   console.log(`Streaming service is running on http://localhost:${PORT}`);
+// });
 
 
 app.use(`/.netlify/functions/api`, router);

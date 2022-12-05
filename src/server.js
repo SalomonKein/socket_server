@@ -4,6 +4,7 @@ const http = require('http');
 const io = require('socket.io');
 const cors = require('cors');
 const {on} = require('events');
+const serverless = require("serverless-http");
 
 let FETCH_INTERVAL = 5000;
 const PORT = process.env.PORT || 4000;
@@ -103,3 +104,4 @@ server.listen(PORT, () => {
 app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
+module.exports.handler = serverless(app);

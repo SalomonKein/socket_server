@@ -12,7 +12,7 @@
     <script type="text/javascript">
         'use strict';
         $(document).ready(function() {
-            const socket = io.connect('https://socket-server-r2qqv5uth-salomonkein.vercel.app');
+            const socket = io.connect('http://socket-server-r2qqv5uth-salomonkein.vercel.app');
             socket.emit('start');
             socket.on('ticker', function(response) {
                 const res = Array.isArray(response) ? response : [response];

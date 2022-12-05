@@ -81,7 +81,8 @@ const socketServer = io(server, {
 });
 
 router.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  // res.sendFile(__dirname + '/index.html');
+  res.status(200).json('WORKING!!!')
 });
 
 router.post('/', function (req, res) {
@@ -104,4 +105,4 @@ server.listen(PORT, () => {
 app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);

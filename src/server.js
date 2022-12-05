@@ -68,6 +68,7 @@ function trackTickers(socket) {
 }
 
 const app = express();
+const router = express.Router();
 app.use(cors());
 app.use(express.json());
 const server = http.createServer(app);
@@ -78,11 +79,11 @@ const socketServer = io(server, {
   },
 });
 
-app.get('/', function (req, res) {
+router.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/', function (req, res) {
+router.post('/', function (req, res) {
   changeInterval(req.body.choice);
   res.status(200).json(`Interval ${req.body.choice} is success`);
 });

@@ -2,7 +2,7 @@
   "name": "streaming-prices",
   "version": "1.0.0",
   "description": "Push JSON prices in real-time over websockets",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
     "node": "14.x"
   },
@@ -16,6 +16,6 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   }
 }

@@ -7,12 +7,12 @@
         </title>
     	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
     	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
-        <script type="text/javascript" src="https://socket-server-r2qqv5uth-salomonkein.vercel.app/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="https://https://socket-server-tawny.vercel.app//socket.io/socket.io.js"></script>
     </head>
     <script type="text/javascript">
         'use strict';
         $(document).ready(function() {
-            const socket = io.connect('https://socket-server-bdbv09d20-salomonkein.vercel.app');
+            const socket = io.connect('https://https://socket-server-tawny.vercel.app/');
             socket.emit('start');
             socket.on('ticker', function(response) {
                 const res = Array.isArray(response) ? response : [response];

@@ -79,8 +79,8 @@ const socketServer = io(server, {
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-  // res.status(200).json('WORKING!!!')
+  // res.sendFile(__dirname + '/index.html');
+  res.status(200).json('WORKING!!!')
 });
 
 app.post('/', function (req, res) {
